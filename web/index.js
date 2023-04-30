@@ -83,7 +83,6 @@ function view(name) {
     let imageElement = document.createElement("img");
     imageElement.src = `/image/${name}.jpg`;
     viewDiv.innerHTML = "";
-    imageElement.height = 800;
     viewDiv.appendChild(imageElement);
 }
 const myDropdown = document.getElementById("myDropdown");

@@ -85,7 +85,6 @@ function view(name: string) {
     let imageElement = document.createElement("img") as HTMLImageElement;
     imageElement.src = `/image/${name}.jpg`;
     viewDiv.innerHTML = "";
-    imageElement.height = 800;
     viewDiv.appendChild(imageElement);
 }
 
