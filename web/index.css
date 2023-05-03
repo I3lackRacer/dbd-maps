@@ -7,6 +7,15 @@
     border: none;
     cursor: pointer;
 }
+
+#logo {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+}
+
 h1 {
     color: white;
     text-align: center;
