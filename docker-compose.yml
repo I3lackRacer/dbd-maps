@@ -8,3 +8,16 @@ services:
       - "80:80"
     volumes:
       - ./:/usr/local/apache2/htdocs/
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dbd.entrypoints=http"
+      - "traefik.http.routers.dbd.rule=Host(`dbd.${DOMAIN}`)"
+      - "traefik.http.middlewares.dbd-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.dbd.middlewares=dbd-https-redirect"
+      - "traefik.http.routers.dbd-secure.entrypoints=https"
+      - "traefik.http.routers.dbd-secure.rule=Host(`dbd.${DOMAIN}`)"
+      - "traefik.http.routers.dbd-secure.tls=true"
+      - "traefik.http.routers.dbd-secure.tls.certresolver=netcup"
+      - "traefik.http.routers.dbd-secure.service=dbd"
+      - "traefik.http.services.dbd.loadbalancer.server.port=8080"
+      - "traefik.docker.network=proxy"
