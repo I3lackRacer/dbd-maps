@@ -81,7 +81,7 @@ function filterFunction() {
 const viewDiv = document.getElementById("view");
 function view(name) {
     let imageElement = document.createElement("img");
-    imageElement.src = `/image/${name}.jpg`;
+    imageElement.src = `image/${name}.jpg`;
     viewDiv.innerHTML = "";
     viewDiv.appendChild(imageElement);
 }

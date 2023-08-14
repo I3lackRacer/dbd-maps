@@ -83,7 +83,7 @@ const viewDiv = document.getElementById("view") as HTMLDivElement;
 
 function view(name: string) {
     let imageElement = document.createElement("img") as HTMLImageElement;
-    imageElement.src = `/image/${name}.jpg`;
+    imageElement.src = `image/${name}.jpg`;
     viewDiv.innerHTML = "";
     viewDiv.appendChild(imageElement);
 }
